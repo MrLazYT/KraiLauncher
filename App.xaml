@@ -1,0 +1,24 @@
+﻿<Application x:Class="KraiLauncher.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:KraiLauncher"
+             xmlns:viewModel="clr-namespace:KraiLauncher.ViewModel"
+             xmlns:view="clr-namespace:KraiLauncher.View">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/PrimaryButton.xaml"/>
+                <ResourceDictionary Source="Themes/ProfileButton.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:GameViewModel}">
+                <view:GameView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:ProfileViewModel}">
+                <view:ProfileView/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+
+</Application>
